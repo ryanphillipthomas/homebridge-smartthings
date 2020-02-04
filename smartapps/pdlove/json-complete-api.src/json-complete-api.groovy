@@ -172,7 +172,7 @@ def renderLocation() {
     	temperature_scale: location.temperatureScale,
     	zip_code: location.zipCode,
         hubIP: location.hubs[0].localIP,
-        smartapp_version: '0.5.5'
+        smartapp_version: '0.5.6'
   	]
 }
 def CommandReply(statusOut, messageOut) {
@@ -250,11 +250,11 @@ def deviceCapabilityList(device) {
   	device.capabilities.collectEntries { capability->
         try {
             [
-                //(capability.name):1
+                (capability.name):1
             ]
         } catch(e) {
             [
-               //(capability.name): null
+               (capability.name): null
             ]
         }
   	}
@@ -264,11 +264,11 @@ def deviceCommandList(device) {
   	device.supportedCommands.collectEntries { command->
         try {
             [
-                //(command.name): (command.arguments)
+                (command.name): (command.arguments)
             ]
         } catch(e) {
             [
-                //(command.name): null
+                (command.name): null
             ]
         }
   	}
@@ -277,11 +277,11 @@ def deviceAttributeList(device) {
   	device.supportedAttributes.collectEntries { attribute->
     	try {
       		[
-        		//(attribute.name): device.currentValue(attribute.name)
+        		(attribute.name): device.currentValue(attribute.name)
       		]
     	} catch(e) {
       		[
-        		//(attribute.name): null
+        		(attribute.name): null
       		]
     	}
   	}
