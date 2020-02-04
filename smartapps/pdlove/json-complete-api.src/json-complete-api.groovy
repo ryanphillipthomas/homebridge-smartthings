@@ -248,17 +248,29 @@ def deviceQuery() {
 def deviceCapabilityList(device) {
   	def i=0
   	device.capabilities.collectEntries { capability->
-    	[
-      		(capability.name):1
-    	]
+        try {
+            [
+                (capability.name):1
+            ]
+        } catch(e) {
+            [
+                (capability.name): null
+            ]
+        }
   	}
 }
 def deviceCommandList(device) {
   	def i=0
   	device.supportedCommands.collectEntries { command->
-    	[
-      		(command.name): (command.arguments)
-    	]
+        try {
+            [
+                (command.name): (command.arguments)
+            ]
+        } catch(e) {
+            [
+                (command.name): null
+            ]
+        }
   	}
 }
 def deviceAttributeList(device) {
