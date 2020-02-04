@@ -254,7 +254,7 @@ def deviceCapabilityList(device) {
             ]
         } catch(e) {
             [
-                (capability.name): null
+               //(capability.name): null
             ]
         }
   	}
@@ -268,7 +268,7 @@ def deviceCommandList(device) {
             ]
         } catch(e) {
             [
-                (command.name): null
+                //(command.name): null
             ]
         }
   	}
@@ -281,7 +281,7 @@ def deviceAttributeList(device) {
       		]
     	} catch(e) {
       		[
-        		(attribute.name): null
+        		//(attribute.name): null
       		]
     	}
   	}
