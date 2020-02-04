@@ -27,7 +27,7 @@ def copyConfig() {
     }
     dynamicPage(name: "copyConfig", title: "Configure Devices", install:true, uninstall:true) {
         section("Select devices to include in the /devices API call") {
-            paragraph "Version 0.5.5"
+            paragraph "Version 0.5.6"
             input "deviceList", "capability.refresh", title: "Most Devices", multiple: true, required: false
             input "sensorList", "capability.sensor", title: "Sensor Devices", multiple: true, required: false
             input "switchList", "capability.switch", title: "All Switches", multiple: true, required: false
@@ -140,7 +140,7 @@ def initialize() {
     registerAll()
 	state.subscriptionRenewed = 0
     subscribe(location, null, HubResponseEvent, [filterEvents:false])
-    log.debug "0.5.5"
+    log.debug "0.5.6"
 }
 
 def authError() {
