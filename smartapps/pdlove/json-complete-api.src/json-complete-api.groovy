@@ -250,7 +250,7 @@ def deviceCapabilityList(device) {
   	device.capabilities.collectEntries { capability->
         try {
             [
-                (capability.name):1
+                //(capability.name):1
             ]
         } catch(e) {
             [
@@ -264,7 +264,7 @@ def deviceCommandList(device) {
   	device.supportedCommands.collectEntries { command->
         try {
             [
-                (command.name): (command.arguments)
+                //(command.name): (command.arguments)
             ]
         } catch(e) {
             [
@@ -277,7 +277,7 @@ def deviceAttributeList(device) {
   	device.supportedAttributes.collectEntries { attribute->
     	try {
       		[
-        		(attribute.name): device.currentValue(attribute.name)
+        		//(attribute.name): device.currentValue(attribute.name)
       		]
     	} catch(e) {
       		[
